@@ -1,12 +1,13 @@
-﻿
+﻿using System.ComponentModel.DataAnnotations;
 
 using Shop.DAL.Core;
 
 namespace Shop.DAL.Entities
 {
-    public class Suppliers : Identity
+    public class Suppliers : CompanyContactInfo
     {
-        public int? SupplierId { get; set; }
+        [Key]
+        public int supplierid { get; set; }
 
     }
 }

@@ -1,19 +1,20 @@
-﻿
+﻿using System.ComponentModel.DataAnnotations;
 
 using Shop.DAL.Core;
 
 namespace Shop.DAL.Entities
 {
-    internal class Employees : Adresses
+    public class Employees : ContactDetails
     {
-        public int? EmpId { get; set; }
-        public string? FirstName { get; set; }
-        public string? LastName { get; set;}
-        public string? Title { get; set; }
-        public string? TitleofCourtesy { get; set; }
-        public DateTime? BirthDate { get; set; }
-        public DateTime? HireDate { get; set; }
-        public int Mgrid { get; set; }
+        [Key]
+        public int empid { get; set; }
+        public string firstname { get; set; }
+        public  string lastname { get; set;}
+        public  string title { get; set; }
+        public  string titleofcourtesy { get; set; }
+        public DateTime birthdate { get; set; }
+        public DateTime hiredate { get; set; }
+        public int? mgrid { get; set; }
 
     }
 }

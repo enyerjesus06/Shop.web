@@ -1,4 +1,5 @@
-﻿
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 using System.Data.SqlTypes;
 
@@ -6,11 +7,13 @@ namespace Shop.DAL.Entities
 {
     public class OrderDetails
     {
-        public int? OrderId { get; set; }
-        public string? ProductId { get; set; }
-        public decimal? UnitPrice { get; set; }
-        public short? Qty { get; set; }
-        public decimal? Discount { get; set;}
+        [Key]
+        public int orderid { get; set; }
+        
+        public  string productid { get; set; }
+        public decimal unitprice { get; set; }
+        public short qty { get; set; }
+        public decimal discount { get; set;}
 
 
 

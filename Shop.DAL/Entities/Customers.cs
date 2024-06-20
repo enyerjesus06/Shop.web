@@ -1,12 +1,14 @@
 ﻿
 
 using Shop.DAL.Core;
+using System.ComponentModel.DataAnnotations;
 
 namespace Shop.DAL.Entities
 {
-    public class Customers : Identity
+    public class Customers : CompanyContactInfo
     {
-        public int? CustId { get; set; }
-        public string? Email { get; set; }
+        [Key]
+        public int custid { get; set; }
+        public  string email { get; set; }
     }
 }

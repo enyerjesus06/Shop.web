@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Shop.DAL.Models.CustomersModels.CustomersModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Customers List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.creation_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.creation_user)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.companyname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contacttitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.custid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.creation_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.creation_user)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.companyname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contactname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contacttitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.custid)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id = item.custid  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.custid }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
